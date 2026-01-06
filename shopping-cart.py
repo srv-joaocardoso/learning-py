@@ -16,6 +16,9 @@ class ShoppingCart:
   def show(self):
     return self.itens
 
+  def remove(self, index):
+    self.pop(index)
+
   def total(self):
     sum = 0
     for item in self.itens:

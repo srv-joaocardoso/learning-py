@@ -1,7 +1,8 @@
 class Item:
-  def __init__(self, name, price):
+  def __init__(self, name, price, weight):
     self.name = name
     self.price = float(price)
+    self.weight = weight
 
 class ShoppingCart:
   def __init__(self):
@@ -20,10 +21,16 @@ class ShoppingCart:
   def remove(self, index):
     self.itens.pop(index)
 
-  def total(self):
+  def total_price(self):
     total = 0
     for element in self.itens:
       total+= element["item"].price * element["qtt"]
+    return total
+    
+  def total_weight(self):
+    total = 0
+    for element in self.itens:
+      total+= element["item"].weight * element["qtt"]
     return total
     
 class User:
